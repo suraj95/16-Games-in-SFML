@@ -1,6 +1,6 @@
 # 16 Games in SFML
 
-![alt text](./Images/Screenshot.png)
+![alt text](./Images/Screenshot2.png)
 
 This is repository contains the source code 16 Games developed in C++ and [SFML](https://www.sfml-dev.org/) by a YouTube channel called ["FamTrinli"](https://www.youtube.com/channel/UCC7qpnId5RIQruKDJOt2exw).
 
@@ -15,7 +15,7 @@ After you fork this repository, you must download SFML. I am running this on Mac
 prefer using the terminal, so I am writing the modified instructions for how to install SMFL for Linux/Unix systems.
 
 1. Run the following command on the terminal
-	
+
 		brew install sfml		
 
 2. Change directory to the desired game. And then compile the source code. 
