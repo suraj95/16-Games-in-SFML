@@ -2,7 +2,7 @@
 
 ![alt text](./Images/Screenshot2.png)
 
-This is repository contains the source code 16 Games developed in C++ and [SFML](https://www.sfml-dev.org/) by a YouTube channel called ["FamTrinli"](https://www.youtube.com/channel/UCC7qpnId5RIQruKDJOt2exw). Most games are getting compiled on my machine, while some are getting compiled but not accepting player input (Keyboard presses are not working) due to issues like OS portability (code has some windows specific header files as that is how the original author wrote them). I will keep updating this as I make progress.
+This is repository contains the source code 16 Games developed in C++ and [SFML](https://www.sfml-dev.org/) by a YouTube channel called [FamTrinli](https://www.youtube.com/channel/UCC7qpnId5RIQruKDJOt2exw). Most games are getting compiled on my machine, while some are getting compiled but not accepting player input (Keyboard presses are not working) perhaps due to issues like OS portability (code has some windows specific header files as that is how the original author wrote them). I will keep updating this as I make progress.
 
 | Game      	           | Able to Compile| Able to Move Player|
 |--------------------------|----------------|--------------------|
@@ -11,9 +11,9 @@ This is repository contains the source code 16 Games developed in C++ and [SFML]
 | 03 Arkanoid 	   		   | Yes   			| No 		   		 |
 | 04 Snake	 	   		   | Yes   			| No 		   		 |
 | 05 Minesweeper   		   | Yes   			| Yes 		   		 |
-| 06 Fifteen-Puzzle 	   | No   			| - 		   		 |
-| 07 Racing(Top Down) 	   | No   			| - 		   		 |
-| 08 Outrun 	   		   | No 		    | -			  		 |
+| 06 Fifteen-Puzzle 	   | Yes   			| Yes 		   		 |
+| 07 Racing(Top Down) 	   | Yes   			| No		   		 |
+| 08 Outrun 	   		   | Yes 		    | No			  	 |
 | 09 Xonix	 	   		   | Yes   			| No 		  		 |
 | 10 Bejeweled	 	   	   | Yes   			| No 		 	     |
 | 11 NetWalk (Pipe Puzzle) | Yes   			| Yes 			     |
@@ -21,7 +21,7 @@ This is repository contains the source code 16 Games developed in C++ and [SFML]
 | 13 Tron   	   		   | Yes   			| No		  		 |
 | 14 Chess		   		   | No 		    | - 		 	     |
 | 15 Volleyball  		   | No   			| - 			     |
-| 16 Asteroids	 	   	   | No   			| - 			     |
+| 16 Asteroids	 	   	   | Yes   			| No 			     |
 
 
 SFML stands for Simple and Fast Multimedia Library. It provides a simple interface to the various components of your machine, to ease the development of games and multimedia applications. It is composed of five modules: system, window, graphics, audio and network. With SFML, your application can compile and run out of the box on the most common operating systems: Windows, Linux, macOS and soon Android & iOS. SFML has official bindings for the C and .Net languages. And thanks to its active community, it is also available in many other languages such as Java, Ruby, Python, Go, and more. But it is worth mentioning that C++ is the go-to language in Game Development. C and C++ underlies nearly all modern software and programming languages today. Many “toy” languages such as Python and Ruby and others are just scripting languages, really, calling C and C++ libraries under the hood.
@@ -30,29 +30,29 @@ C++ became the predominant game programming language because it is Object Orient
 
 ## Installation and Running
 
-After you fork this repository, you must download SFML. I am running this on MacOS, and even though there are specific instructions on how to install SFML on Xcode, I don't like using Xcode. I simply
-prefer using the terminal, so I am writing the modified instructions for how to install SMFL for Linux/Unix systems.
+After you fork this repository, you must download SFML. I am running this on MacOS, and even though there are specific instructions on how to install SFML on Xcode, I am not referring to it because I
+don't like Xcode. I prefer using terminal, so I am referring to the instructions for Linux and making the necessary changes for Unix/BSD systems.
 
 1. Download SFML using Homebrew
 
 Latest stable version is 2.5.1
 
-		brew install sfml
+	brew install sfml
 
 2. Change directory to the desired game. And then compile the source code. 
 
 Since we installed SFML to a non-standard path, we need to tell the compiler where to find the SFML headers (.hpp files):
 		
-		g++ -c main.cpp /usr/local/Cellar/sfml/2.5.1/include
+	g++ -c main.cpp /usr/local/Cellar/sfml/2.5.1/include
 
 3. Link the compiled file to the SFML libraries in order to get the final executable. 
 
 SFML is made of 5 modules (system, window, graphics, network and audio), and there's one library for each of them.
 
-		g++ main.o -o sfml-app -lsfml-graphics -lsfml-window -lsfml-system
+	g++ main.o -o sfml-app -lsfml-graphics -lsfml-window -lsfml-system
 
 4. Execute the compiled program
 
 Root access is necessary so that program can accept keyboard inputs to play game.
 
-		sudo ./sfml-app	
+	sudo ./sfml-app	

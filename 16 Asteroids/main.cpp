@@ -1,6 +1,9 @@
-#include <SFML/Graphics.hpp>
-#include <time.h>
-#include <list>
+#include<SFML/Graphics.hpp>
+#include<math.h>
+#include<time.h>
+#include<list>
+#include<iostream>
+
 using namespace sf;
 
 const int W = 1200;
@@ -235,9 +238,9 @@ int main()
               }
         }
 
-    if (Keyboard::isKeyPressed(Keyboard::Right)) p->angle+=3;
-    if (Keyboard::isKeyPressed(Keyboard::Left))  p->angle-=3;
-    if (Keyboard::isKeyPressed(Keyboard::Up)) p->thrust=true;
+    if(Keyboard::isKeyPressed(Keyboard::Right)) p->angle+=3;
+    if(Keyboard::isKeyPressed(Keyboard::Left)) p->angle-=3;
+    if(Keyboard::isKeyPressed(Keyboard::Up)) p->thrust=true;
     else p->thrust=false;
 
 
