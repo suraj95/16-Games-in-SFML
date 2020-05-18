@@ -17,7 +17,7 @@ prefer using the terminal, so I am writing the modified instructions for how to 
 
 Latest stable version is 2.5.1
 
-	brew install sfml	
+		brew install sfml	
 
 2. Change directory to the desired game. And then compile the source code. 
 
