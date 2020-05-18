@@ -1,0 +1,13 @@
+# Linker Files
+
+*.o
+
+# Executables
+
+*.exe
+*.out
+*.app
+
+# Executables without a specific extension
+
+sfml-app
