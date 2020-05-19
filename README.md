@@ -20,7 +20,7 @@ This is repository contains the source code 16 Games developed in C++ and [SFML]
 | 12 Mahjong Solitaire     | Yes   			  | No 		 	       |
 | 13 Tron   	   		   | Yes   			  | No		  		   |
 | 14 Chess		   		   | No 		      | - 		 	       |
-| 15 Volleyball  		   | Yes (linker fail)| - 			       |
+| 15 Volleyball  		   | Yes 			  | No 			       |
 | 16 Asteroids	 	   	   | Yes   			  | No 			       |
 
 
@@ -50,6 +50,10 @@ Since we installed SFML to a non-standard path, we need to tell the compiler whe
 SFML is made of 5 modules (system, window, graphics, network and audio), and there's one library for each of them.
 
 	g++ main.o -o sfml-app -lsfml-graphics -lsfml-window -lsfml-system
+
+For games that depend on additional libraries like Box2D, we have to add the relevant header files (.hpp files). We don't need to add the source files (.cpp files) as we can simply use Cmake to create a static library with Box2D Source code. The generated libBox2D.a file should be added to the linker with main.o and it should be compiled without any problems.
+
+	g++ main.o src/libbox2d.a -o sfml-app -lsfml-graphics -lsfml-window -lsfml-system
 
 4. Execute the compiled program
 
