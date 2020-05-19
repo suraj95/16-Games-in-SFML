@@ -1,5 +1,5 @@
 #include <SFML/Graphics.hpp>
-#include <Box2D/Box2D.h>
+#include "box2d.h"
 using namespace sf;
 
 const float SCALE = 30.f;
@@ -50,24 +50,42 @@ int main()
     shape.SetAsBox(30/SCALE,30/SCALE);
     b2BodyDef bdef;
     bdef.type=b2_dynamicBody;
+
     ///players///////////////
+
     b2Body *pBody[2];
-    for(int i=0;i<2;i++){
-    bdef.position.Set(20*i,2);
-    b2CircleShape circle;
-    circle.m_radius=32/SCALE;
-    circle.m_p.Set(0,13/SCALE);
-    pBody[i] = World.CreateBody(&bdef);
-    pBody[i]->CreateFixture(&circle,5);
-    circle.m_radius=25/SCALE;
-    circle.m_p.Set(0,-20/SCALE);
-    pBody[i]->CreateFixture(&circle,5);
-    pBody[i]->SetFixedRotation(true);
+
+    for(int i=0; i<2; i++){
+        bdef.position.Set(20*i,2);
+        b2CircleShape circle;
+        circle.m_radius=32/SCALE;
+        circle.m_p.Set(0,13/SCALE);
+        pBody[i] = World.CreateBody(&bdef);
+        pBody[i]->CreateFixture(&circle,5);
+        circle.m_radius=25/SCALE;
+        circle.m_p.Set(0,-20/SCALE);
+        pBody[i]->CreateFixture(&circle,5);
+        pBody[i]->SetFixedRotation(true);
     }
-    pBody[0]->SetUserData("player1");
-    pBody[1]->SetUserData("player2");
+
+    /*
+        Since we are using a void* (which is appropriate) for value, we need to pass a void* as 
+        our second argument, instead of a char constant. This will work to copy one variable to the 
+        next, but there are more efficient ways.
+    */
+
+
+    //pBody[0]->SetUserData("player1");
+    //pBody[1]->SetUserData("player2");
+
+    char player1[8] = "player1";
+    char player2[8] = "player2";
+
+    pBody[0]->SetUserData(&player1);
+    pBody[1]->SetUserData(&player2);
 
     /// ball /////////////
+
     bdef.position.Set(5,1);
     b2CircleShape circle;
     circle.m_radius=32/SCALE;
@@ -77,7 +95,10 @@ int main()
     fdef.restitution=0.95;
     fdef.density=0.2;
     b->CreateFixture(&fdef);
-    b->SetUserData("ball");
+
+    char ball[5] = "ball";
+    b->SetUserData(&ball);
+
     /////////////////////////
     
     bool onGround=0;
@@ -124,10 +145,12 @@ int main()
         pBody[1]->SetLinearVelocity(vel);
         
         //ball max speed
+
         vel = b->GetLinearVelocity();
         if (vel.Length()>15) b->SetLinearVelocity( 15/vel.Length() * vel ); 
 
         //////////Draw///////////////
+
         window.draw(sBackground);
             
         for (b2Body* it = World.GetBodyList(); it != 0; it = it->GetNext())
