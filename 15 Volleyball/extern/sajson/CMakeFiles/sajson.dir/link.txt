@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libsajson.a  CMakeFiles/sajson.dir/sajson.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libsajson.a

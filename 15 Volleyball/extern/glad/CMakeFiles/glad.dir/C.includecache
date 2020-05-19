@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/srpatil/desktop/Suraj/Game_Development/box2d/extern/glad/include/KHR/khrplatform.h
+stdint.h
+-
+inttypes.h
+-
+stdint.h
+-
+
+/Users/srpatil/desktop/Suraj/Game_Development/box2d/extern/glad/include/glad/gl.h
+winapifamily.h
+-
+KHR/khrplatform.h
+-
+
+/Users/srpatil/desktop/Suraj/Game_Development/box2d/extern/glad/src/gl.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+glad/gl.h
+-
+
