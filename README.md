@@ -2,7 +2,7 @@
 
 ![alt text](./Images/Screenshot2.png)
 
-This is repository contains the source code 16 Games developed in C++ and [SFML](https://www.sfml-dev.org/) by a YouTube channel called [FamTrinli](https://www.youtube.com/channel/UCC7qpnId5RIQruKDJOt2exw). Most games are getting compiled on my machine, while some are getting compiled but not accepting player input (Keyboard presses are not working) perhaps due to issues like OS portability (code has some windows specific header files as that is how the original author wrote them). I will keep updating this as I make progress.
+This repository contains the source code "16 Games developed in C++" using [SFML Library](https://www.sfml-dev.org/) by a YouTube channel called [FamTrinli](https://www.youtube.com/channel/UCC7qpnId5RIQruKDJOt2exw). Most games are getting compiled on my machine, while some are getting compiled but not accepting player input (Keyboard presses are not working) perhaps due to issues like OS portability (code has some windows specific header files as that is how the original author wrote them). I will keep updating this as I make progress.
 
 | Game      	           | Able to Compile  | Able to Move Player|
 |--------------------------|------------------|--------------------|
